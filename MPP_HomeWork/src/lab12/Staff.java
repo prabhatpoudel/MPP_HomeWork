@@ -1,4 +1,4 @@
-package lab1;
+package lab12;
 
 public class Staff extends Person {
 	private double Salary;
