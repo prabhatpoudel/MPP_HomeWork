@@ -48,7 +48,7 @@ public class DepartmentApplication
 		dept.addPerson(frankGore);
 		dept.addPerson(adamDavis);
 		dept.addPerson(davidHeck);
-		/*******************************************************
+		
 		// Create course objects	
 		Course cs201 = new Course("cs201","programming",4, johnDoodle);
 		Course cs360 = new Course("cs360","database",3, samHoward);
@@ -57,6 +57,12 @@ public class DepartmentApplication
 		Course cs301 = new Course("cs301","Software engg",3, samHoward);
 		Course cs450 = new Course("cs450","Advanced architecture",5,frankMoore);
 		
+		frankMoore.addCourse(cs450);
+		johnDoodle.addCourse(cs240);
+		samHoward.addCourse(cs450);
+		frankMoore.addCourse(cs450);
+		
+		/*******************************************************	
 		/*
 		 * The above course objects will go inside either
 		 * a faculty object, or a student object.  Not all of the course
@@ -72,7 +78,7 @@ public class DepartmentApplication
       
       /********************************************************/
       
-      
+		
       double totsalary = 0;
 
       while(true)

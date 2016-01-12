@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Faculty extends Person {
 	private double Salary;
-    ArrayList<Course> cour = new ArrayList<Course>();
+    ArrayList<Course> cour ;
 	//Faculty("Frank Moore","472-5921",43,10000)
 	public Faculty(String name, String phone, int age, double salary)
 	{
@@ -13,6 +13,7 @@ public class Faculty extends Person {
 //		setPhone(phone);
 //		setAge(age);
 		setSalary(salary);
+		cour= new ArrayList<Course>();
 	}
 	public double getSalary() {
 		return Salary;
@@ -23,7 +24,12 @@ public class Faculty extends Person {
 	}
 
 	public int getTotalUnits() {
-		return 0;
+		int sum=0;
+		for(Object o: cour)
+		{
+			sum+=((Course) o).getUnits();
+		}
+		return sum;
 	}
 	
 	public void addCourse(Course c)

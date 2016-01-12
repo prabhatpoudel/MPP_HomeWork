@@ -4,13 +4,15 @@ public class Course {
 	private String Number;
 	private String Title;
 	private int Units;
+	private Faculty fac;
 
 //Course("cs201","programming",4, johnDoodle);
-	public Course(String id, String course, int units)
+	public Course(String id, String course, int units,Faculty fac)
 	{
 		setNumber(id);
 		setTitle(course);
 		setUnits(units);
+		this.fac=fac;
 	}
 	public String getNumber() {
 		return Number;

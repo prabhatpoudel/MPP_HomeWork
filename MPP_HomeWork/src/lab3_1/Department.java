@@ -3,6 +3,7 @@ package lab3_1;
 public class Department {
 	private String name;
 	private String location;
+	private Company underComp;
 	
 
 	public String getName() {
