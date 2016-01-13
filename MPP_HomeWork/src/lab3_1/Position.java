@@ -5,15 +5,16 @@ import java.util.ArrayList;
 public class Position {
 	private String title;
 	private String description;
-	private Department underDept;
+	private Department dept;
 	
-	ArrayList<Employee> emp;
+	private ArrayList<Employee> emp;
 	
-	public Position(String title, String desc, Department dept)
+	public Position(String title, String desc)
 	{
 		this.title=title;
 		this.description=desc;
-		this.underDept=dept;
+		emp=new ArrayList();
+		
 	}
 
 	public String getTitle() {
@@ -31,9 +32,25 @@ public class Position {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public void setdept(Department d)
+	{
+		this.dept=d;
+	}
+	
+	public void addEmp(Employee e)
+	{
+		e.setPosition(this);
+		emp.add(e);
+	}
 
 	public void print() {
-		System.out.println(" Name of Department is : " + getTitle());
+		System.out.println("   Position is : " + getTitle());
+		System.out.println("   Description of Position : " + getDescription());
+		for(Employee e: emp)
+		{
+			e.print();
+		}
 	}
 
 }

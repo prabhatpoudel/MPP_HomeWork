@@ -6,11 +6,10 @@ public class Company {
 	private String name;
 	ArrayList<Department> dept;
 	
-	public Company(String name, Department d)
+	public Company(String name)
 	{
 		this.name=name;
 		dept=new ArrayList<Department>();
-		addDept(d);
 	}
 
 	public String getName() {
@@ -22,11 +21,16 @@ public class Company {
 	}
 	
 	public void addDept(Department d)
-	{	
+	{	d.setcomp(this);
 		dept.add(d);
 	}
 
 	public void print() {
-		System.out.println(" Name of Comapny: " + getName());
+		System.out.println("Company: " + getName());
+		for(Department d: dept)
+		{
+			d.print();
+		}
+		System.out.println("!!!!!!!!!!!!!!!!!!!");
 	}
 }

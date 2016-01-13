@@ -8,10 +8,11 @@ public class Employee {
 	private String middleInitial;
 	private String lastName;
 	private Date birthDate;
-	private int SSN;
+	private String SSN;
 	private double salary;
+	private Position employeePosition;
 	
-	public Employee(String id,String fname, String mname, String lname, Date dob, int ssn, double salary)
+	public Employee(String id,String fname, String mname, String lname, Date dob, String ssn, double salary)
 	{
 		this.employeeID=id;
 		this.firstName=fname;
@@ -62,11 +63,11 @@ public class Employee {
 		this.birthDate = birthDate;
 	}
 
-	public int getSSN() {
+	public String getSSN() {
 		return SSN;
 	}
 
-	public void setSSN(int sSN) {
+	public void setSSN(String sSN) {
 		SSN = sSN;
 	}
 
@@ -77,13 +78,18 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
+	
+	public void setPosition(Position p)
+	{
+		employeePosition=p;
+	}
 
 	public void print()
 	{
 		System.out.println("******Employee Details********");
 		System.out.println("ID: "+employeeID + "\nName: "+firstName+" "+middleInitial+" "+lastName);
 		System.out.println("DOB: "+ birthDate);
-		System.out.printf("SSN %d",SSN);
+		System.out.printf("SSN %s",SSN);
 		System.out.println("Salary: "+salary);
 	}
 
