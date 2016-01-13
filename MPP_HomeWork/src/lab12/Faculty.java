@@ -36,5 +36,7 @@ public class Faculty extends Person {
 	{
 		cour.add(c);
 	}
+	
+	
 
 }

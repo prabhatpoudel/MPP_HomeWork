@@ -32,6 +32,11 @@ public class Department {
 			{
 				sum+= ((Staff) p).getSalary();
 			}
+			
+			else if(p instanceof StaffStudent)
+			{
+				sum+= ((StaffStudent) p).getSalary();
+			}
 		}
 		return sum;
 		
@@ -48,7 +53,14 @@ public class Department {
 				System.out.println("Age : "+((Faculty) p).getAge());
 				System.out.println("Type : Faculty");
 			}
-			
+			else if(p instanceof StaffStudent)
+			{
+				System.out.println("Name : "+((StaffStudent) p).getName());
+				System.out.println("Phone : "+((StaffStudent) p).getPhone());
+				System.out.println("Age : "+((StaffStudent) p).getAge());
+				System.out.println("Course Start Date : "+((StaffStudent) p).getStartDate());
+				System.out.println("Type : StaffStudent");
+			}
 			else if(p instanceof Staff)
 			{
 				System.out.println("Name : "+((Staff) p).getName());
@@ -56,6 +68,8 @@ public class Department {
 				System.out.println("Age : "+((Staff) p).getAge());
 				System.out.println("Type : Staff");
 			}
+			
+			
 			
 		}
 	}
@@ -79,6 +93,19 @@ public class Department {
 		per.add(p);
 	}
 	
+	public void showAllStudent(Object name)
+	{
+		for(Object p: per)
+		{
+			if(p instanceof Faculty)
+			{
+			  if(((Faculty) p).getName().equals(name))
+			  {
+				  
+			  }
+			}
+	}
+	}
 
 
 }

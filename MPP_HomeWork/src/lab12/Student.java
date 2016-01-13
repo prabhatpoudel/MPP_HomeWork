@@ -24,11 +24,22 @@ public class Student extends Person {
 	}
 
 	public int getTotalUnits() {
-		return 0;
+		int sum=0;
+		for(Object o: cour)
+		{
+			sum+=((Course) o).getUnits();
+		}
+		return sum;
 	}
+	
 	public void addCourse(Course c)
 	{
 		cour.add(c);
+	}
+	
+	public void getStudent(Course c)
+	{
+		
 	}
 
 }

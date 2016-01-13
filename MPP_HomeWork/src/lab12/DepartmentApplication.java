@@ -1,8 +1,12 @@
 package lab12;
 
 import java.io.*;                 // for I/O
-import java.lang.Integer;  
+import java.lang.Integer;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -14,7 +18,9 @@ import java.util.ArrayList;
 
 public class DepartmentApplication
    {
-   public static void main(String[] args) throws IOException
+  
+
+public static void main(String[] args) throws IOException, ParseException
       {
       Department dept = new Department("ComputerScience");
       
@@ -62,6 +68,15 @@ public class DepartmentApplication
 		samHoward.addCourse(cs450);
 		frankMoore.addCourse(cs450);
 		
+		
+		// Create StaffStudent objects
+		        SimpleDateFormat format = new SimpleDateFormat("yyMMdd");
+		        StaffStudent prabhat = new StaffStudent("Prabhat","472-1121",22,4000.0,4.0, format.parse("880711"));
+//				Student maryJones = new Student("Mary Jones","472-7322",32,3.80);
+//				Student leeJohnson = new Student("Lee Johnson","472-6009",19,3.65);
+				dept.addPerson(prabhat);
+//				dept.addPerson(maryJones);
+//				dept.addPerson(leeJohnson);
 		/*******************************************************	
 		/*
 		 * The above course objects will go inside either
