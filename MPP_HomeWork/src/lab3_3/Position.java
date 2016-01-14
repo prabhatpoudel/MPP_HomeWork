@@ -7,6 +7,9 @@ public class Position {
 	private String description;
 	private Department dept;
 	
+	private Position Superior;
+	private ArrayList<Position> inferior;
+	
 	private ArrayList<Employee> emp;
 	
 	public Position(String title, String desc)
@@ -14,6 +17,7 @@ public class Position {
 		this.title=title;
 		this.description=desc;
 		emp=new ArrayList();
+		inferior= new ArrayList<Position>(25);
 		
 	}
 
@@ -36,6 +40,29 @@ public class Position {
 	public void setdept(Department d)
 	{
 		this.dept=d;
+	}
+	
+	public Position getSuperior()
+	{
+		return this.Superior;
+	}
+	
+	public void setSuperior(Position Superior)
+	{
+		this.Superior=Superior;
+		Superior.addPosition(this);
+	}
+	
+/*	public void addInferior(Position inferior1)
+	{
+		inferior.add(inferior1);
+		inferior1.setSuperior(this);
+	}*/
+	
+	public void addPosition(Position p1)
+	{
+		inferior.add(p1);
+//		p1.setSuperior(this);
 	}
 	
 	public void addEmp(Employee e)
@@ -67,7 +94,11 @@ public class Position {
 	
 	public void printDownLine()
 	{
-	  	
+	  	for(Position p: inferior)
+	  	{
+	  		//System.out.println("Position"+p.inferior.get(0));
+	  		p.print();
+	  	}
 	}
 
 }

@@ -67,6 +67,23 @@ public class Department {
 		System.out.println("Total Salary of Department: "+ getName()+" is "+sum);
 		return sum;
 	}
+	
+/*	public Position getSuperior()
+	{
+		for(Position p : pos)
+		{
+		  p.getSuperior();	
+		}
+	}*/
+	
+	public void printReportingHierarchy()
+	{
+		for(Position p: pos)
+		{
+			System.out.println("Position: "+p.getTitle());
+			p.printDownLine();
+		}
+	}
 
 
 }

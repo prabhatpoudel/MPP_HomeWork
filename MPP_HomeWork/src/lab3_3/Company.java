@@ -45,4 +45,14 @@ public class Company {
 		System.out.println("Total Salary of Company: "+ getName()+" is "+sum);
 		return sum;
 	}
+	
+	public void printReportingHierarchy()
+	{
+		for(Department d: dept)
+			
+		{
+			System.out.println("Department"+d.getName());
+			d.printReportingHierarchy();
+		}
+	}
 }
