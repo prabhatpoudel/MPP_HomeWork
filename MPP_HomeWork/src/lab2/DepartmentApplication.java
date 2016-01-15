@@ -115,6 +115,9 @@ public static void main(String[] args) throws IOException, ParseException
             case 'u':
                dept.unitsPerFaculty();
                break;
+            case 'a':
+            	dept.displayStudent("Frank Moore");
+            	break;
             case 'q': return;
             default:
                putText("Invalid entry\n");

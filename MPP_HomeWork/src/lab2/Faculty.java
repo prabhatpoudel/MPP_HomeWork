@@ -22,6 +22,11 @@ public class Faculty extends Person {
 	public void setSalary(double salary) {
 		Salary = salary;
 	}
+	
+	public ArrayList<Course> courses()
+	{
+		return cour;
+	}
 
 	public int getTotalUnits() {
 		int sum=0;
@@ -36,7 +41,35 @@ public class Faculty extends Person {
 	{
 		cour.add(c);
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(Salary);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((cour == null) ? 0 : cour.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Faculty other = (Faculty) obj;
+		if (Double.doubleToLongBits(Salary) != Double.doubleToLongBits(other.Salary))
+			return false;
+		if (cour == null) {
+			if (other.cour != null)
+				return false;
+		} else if (!cour.equals(other.cour))
+			return false;
+		return true;
+	}
 	
-	
+
 
 }

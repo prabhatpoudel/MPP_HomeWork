@@ -37,9 +37,18 @@ public class Student extends Person {
 		cour.add(c);
 	}
 	
-	public void getStudent(Course c)
-	{
-		
+	public boolean hasFaculty(Faculty f) {
+		for (Course c : cour) {
+			if (c.getFac().equals(f)) {
+				return true;
+			}
+
+		}
+		return false;
+	}
+	@Override
+	public String toString() {
+		return "Student [GPA=" + GPA + ", cour=" + cour + "]";
 	}
 
 }

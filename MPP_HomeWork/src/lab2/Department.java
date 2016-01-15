@@ -7,6 +7,7 @@ public class Department {
 
 	private String Name;
 	ArrayList<Person> per = new ArrayList<Person>();
+	ArrayList<Student> stud = new ArrayList<Student>();
 	
 	public Department(String Name)
 	{
@@ -105,6 +106,51 @@ public class Department {
 			  }
 			}
 	}
+	}
+	
+	public Faculty faculty(String name) {
+		for (Person p : per) {
+			if (p instanceof Faculty & p.getName().equals(name)) {
+				return (Faculty) p;
+			}
+		}
+		return null;
+	}
+	
+	public ArrayList<Student> listStudent()
+	{
+		for(Person p: per)
+		{
+			if(p instanceof Student)
+			{
+				stud.add((Student)p);
+			}
+		}
+		return stud;
+	}
+	
+	public void displayStudent(String name)
+	{
+		Faculty fac= faculty(name);
+		
+		ArrayList<Student> stu1 = listStudent();
+		ArrayList<Student> facultyStudents = (ArrayList<Student>) stu1.clone();
+		if(fac!=null)
+		{
+			for  (Course c: fac.courses()){
+				
+				for(Student s : stu1){
+					if(s.hasFaculty(fac)){
+						//System.out.println(s.getName());
+						facultyStudents.remove(s);
+					}
+				}
+			}
+			
+			for (Student fs : facultyStudents){
+				System.out.println(fs.getName());
+			}
+		}
 	}
 
 

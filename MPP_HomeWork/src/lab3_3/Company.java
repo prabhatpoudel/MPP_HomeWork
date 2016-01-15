@@ -51,7 +51,7 @@ public class Company {
 		for(Department d: dept)
 			
 		{
-			System.out.println("Department"+d.getName());
+			System.out.println("**********Department: "+d.getName()+"**********");
 			d.printReportingHierarchy();
 		}
 	}

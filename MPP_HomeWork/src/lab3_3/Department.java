@@ -80,7 +80,7 @@ public class Department {
 	{
 		for(Position p: pos)
 		{
-			System.out.println("Position: "+p.getTitle());
+			//System.out.println("Position: "+p.getTitle());
 			p.printDownLine();
 		}
 	}

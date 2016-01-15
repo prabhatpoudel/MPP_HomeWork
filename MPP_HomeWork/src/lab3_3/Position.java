@@ -74,8 +74,10 @@ public class Position {
 	public void print() {
 		System.out.println("   Position is : " + getTitle());
 		System.out.println("   Description of Position : " + getDescription());
+		//System.out.println(emp.size());
 		for(Employee e: emp)
 		{
+			//System.out.println("***********");
 			e.print();
 		}
 	}
@@ -94,6 +96,7 @@ public class Position {
 	
 	public void printDownLine()
 	{
+		print();
 	  	for(Position p: inferior)
 	  	{
 	  		//System.out.println("Position"+p.inferior.get(0));
