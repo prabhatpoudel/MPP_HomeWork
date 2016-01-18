@@ -2,8 +2,8 @@ package lab3;
 
 import java.text.DecimalFormat;
 
-public class FedEx implements Carier {
-	private double weight;
+public class FedEx extends Carrier {
+	/*private double weight;
 	public double getWeight() {
 		return weight;
 	}
@@ -20,47 +20,47 @@ public class FedEx implements Carier {
 		this.itemName = itemName;
 	}
 
-	public String getDestination() {
-		return destination;
+	public String getgetZone()() {
+		return getZone();
 	}
 
-	public void setDestination(String destination) {
-		this.destination = destination;
+	public void setgetZone()(String getZone()) {
+		this.getZone() = getZone();
 	}
 
 	private String itemName;
-	private String destination;
+	private String getZone();*/
 	DecimalFormat df = new DecimalFormat(".00");
 	
 	public FedEx(String name, double weight, String destination)
 	{
-		this.itemName=name;
-		this.destination=destination;
-		this.weight=weight;
+		super(name,weight,destination);
+		/*this.itemName=name;
+		this.getZone()=getZone();
+		this.weight=weight;*/
 	}
 	
-	@Override
 	public double calculateRates() {
 		// TODO Auto-generated method stub
 		double rate=1;
-		if(destination == "IA" || destination == "MT" || destination == "OR" || destination == "CA" )
+		if(getZone() == "IA" || getZone() == "MT" || getZone() == "OR" || getZone() == "CA" )
 		{
-			rate= Double.valueOf(df.format(weight*0.35));
+			rate= Double.valueOf(df.format(getWeight()*0.35));
 //			rate=weight*0.35;
 		}
-		else if(destination =="TX" || destination =="UT")
+		else if(getZone() =="TX" || getZone() =="UT")
 		{
-			rate= Double.valueOf(df.format(weight*0.30));
+			rate= Double.valueOf(df.format(getWeight()*0.30));
 //			rate=weight*0.30;
 		}
-		else if(destination =="FL" || destination=="MA" ||destination == "OH")
+		else if(getZone() =="FL" || getZone()=="MA" ||getZone() == "OH")
 		{
-			rate= Double.valueOf(df.format(weight*0.55));
+			rate= Double.valueOf(df.format(getWeight()*0.55));
 //			rate=0.55*weight;
 		}
 		else 
 		{
-			rate= Double.valueOf(df.format(weight*0.43));
+			rate= Double.valueOf(df.format(getWeight()*0.43));
 			//rate =0.43*weight;
 		}
 		return rate;
