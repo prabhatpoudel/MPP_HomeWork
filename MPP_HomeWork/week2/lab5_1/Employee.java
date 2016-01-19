@@ -1,9 +1,13 @@
 package lab5_1;
 
+import java.util.ArrayList;
+
 public abstract class Employee {
 	private int empid;
+	private ArrayList<Paycheck> paycheck = new ArrayList();
 	
-	public abstract DateRange  calcGrossPay();
+	public abstract double  calcGrossPay(DateRange daterange);
+	
 	
 	public void print()
 	{
@@ -13,8 +17,18 @@ public abstract class Employee {
 	
 	public Paycheck CalcCompensation(int month, int year)
 	{
-		return null;
+		DateRange range = null;
+		double totalPay= calcGrossPay(range);
 		
+		double fica= totalPay*0.23;
+		double state=totalPay*0.05;
+		double local=totalPay*0.01;
+		double medicare=totalPay*0.03;
+		double ssn = totalPay*0.075;
+		
+		Paycheck pc1= new Paycheck(totalPay,fica,state,local,medicare,ssn,range, this);
+		paycheck.add(pc1);
+		return pc1;		
 	}
 
 }

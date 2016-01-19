@@ -6,9 +6,10 @@ public class Commissioned extends Employee{
 	
 	
 	@Override
-	public DateRange calcGrossPay() {
+	public double calcGrossPay(DateRange range) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
+
 
 }

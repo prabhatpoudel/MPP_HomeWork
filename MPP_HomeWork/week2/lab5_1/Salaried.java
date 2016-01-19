@@ -4,9 +4,10 @@ public class Salaried extends Employee{
 	private double salary;
 
 	@Override
-	public DateRange calcGrossPay() {
+	public double calcGrossPay(DateRange range) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
+
 
 }

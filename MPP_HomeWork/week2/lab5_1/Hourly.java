@@ -5,9 +5,9 @@ public class Hourly extends Employee{
 	private double hoursPerWeek;
 
 	@Override
-	public DateRange calcGrossPay() {
+	public double calcGrossPay(DateRange range) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 }
