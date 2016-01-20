@@ -7,13 +7,12 @@ public class DateRange {
 	private GregorianCalendar startDate;
 
 	private GregorianCalendar endDate;
-	
-	public DateRange(GregorianCalendar startDate, GregorianCalendar endDate)
-	{
-		this.startDate=startDate;
-		this.endDate=endDate;
+
+	public DateRange(GregorianCalendar startDate, GregorianCalendar endDate) {
+		this.startDate = startDate;
+		this.endDate = endDate;
 	}
-	
+
 	public GregorianCalendar getStartDate() {
 		return startDate;
 	}
@@ -21,32 +20,32 @@ public class DateRange {
 	public GregorianCalendar getEndDate() {
 		return endDate;
 	}
-	
-	public boolean isRange(GregorianCalendar date)
-	{
-		if(startDate.after(date) & endDate.before(date))
-		{
+
+	public boolean isRange(GregorianCalendar date) {
+		if (startDate.before(date) & endDate.after(date)) {
+			// System.out.println("I am in range");
 			return true;
-		}
-		else 
+		} else
 			return false;
 	}
-	
-	public String  toString()
-	{
-		return "StartDate: "+startDate+" EndDate"+endDate;
+
+	@Override
+	public String toString() {
+
+		return "DateRange [startDate=" + startDate.getTime() + ", endDate=" + endDate.getTime() + "]";
 	}
 
-	public static GregorianCalendar getFirstDayOfMonth(GregorianCalendar date)
-	{
-	  date.set(GregorianCalendar.DATE,1);
-	  return date;
+	public static GregorianCalendar getFirstDayOfMonth(GregorianCalendar date) {
+		GregorianCalendar cal = new GregorianCalendar(date.get(GregorianCalendar.YEAR),
+				date.get(GregorianCalendar.MONTH), 1);
+		return cal;
 	}
-	
-	public static GregorianCalendar getLastDayOfMonth(GregorianCalendar date)
-	{
-		 date.set((GregorianCalendar.DATE),date.getActualMaximum(Calendar.DAY_OF_MONTH));
-		 return date;
+
+	public static GregorianCalendar getLastDayOfMonth(GregorianCalendar date) {
+		GregorianCalendar cal = new GregorianCalendar(date.get(GregorianCalendar.YEAR),
+				date.get(GregorianCalendar.MONTH), date.getActualMaximum(Calendar.DAY_OF_MONTH));
+		return cal;
+
 	}
-	
+
 }
