@@ -7,11 +7,11 @@ public class Commissioned extends Employee {
 	private double baseSalary;
 	private ArrayList<Order> orders = new ArrayList();
 
-	public Commissioned(int empid, double commission, double salary, Order o) {
+	public Commissioned(int empid, double commission, double salary) {
 		super(empid);
 		this.baseSalary = salary;
 		this.commission = commission;
-		addOrders(o);
+		
 	}
 
 	@Override
