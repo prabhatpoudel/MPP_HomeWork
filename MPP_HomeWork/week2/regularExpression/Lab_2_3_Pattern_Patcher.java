@@ -25,6 +25,7 @@ public class Lab_2_3_Pattern_Patcher {
 	public static void lab_2(String license) {
 		Pattern pattern = Pattern.compile("[A-Z]{2} - [0-9]{4} - [A-Z]{3}");
 		Matcher matcher = pattern.matcher(license);
+		
 		if(matcher.matches())
 		{
 
@@ -38,12 +39,13 @@ public class Lab_2_3_Pattern_Patcher {
 	public static void lab_3(String number) {
 		Pattern pattern = Pattern.compile("[8]");
 		Matcher matcher = pattern.matcher(number);
-		String op="";
-		while(matcher.find())
-		{
-			op=matcher.replaceAll("Eight");
-		}
-		System.out.println(op);
+//		String op="";
+		System.out.println(matcher.replaceAll("Eight"));
+//		while(matcher.find())
+//		{
+//			op=matcher.replaceAll("Eight");
+//		}
+//		System.out.println(op);
 	}
 
 }
