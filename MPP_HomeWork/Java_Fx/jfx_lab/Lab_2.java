@@ -7,7 +7,7 @@ import javafx.scene.layout.*;
 import javafx.geometry.*;
 //import javafx.scene.text.*;
 import javafx.scene.control.*;
-import javafx.event.*;
+//import javafx.event.*;
 
 public class Lab_2 extends Application {
 
