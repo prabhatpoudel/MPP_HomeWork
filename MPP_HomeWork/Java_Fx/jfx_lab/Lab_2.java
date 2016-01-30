@@ -1,5 +1,10 @@
 package jfx_lab;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -76,9 +81,9 @@ public class Lab_2 extends Application {
 		{
 			if (txtInput.getText().length() != 0) {
 				String output ="";
-				for(int i =0; i<txtInput.getText().length(); i++)
+				for(int i =txtInput.getText().length()-1; i>=0; i--)
 				{
-					output+=txtInput.getText().charAt(txtInput.getText().length()-i);
+					output+=txtInput.getText().charAt(i);
 				}
 				txtOutput.setText(output);
 			} else {
@@ -89,7 +94,27 @@ public class Lab_2 extends Application {
 				alert.showAndWait();
 			}
 		});
+		
+		btnRmvDups.setOnAction(e-> {
+				if (txtInput.getText().length() != 0) {
+					String output ="";
+					
+					String [] array = txtInput.getText().split("");
+					output = Arrays.asList(array).stream().distinct()
+							.collect(Collectors.joining());
+					txtOutput.setText(output);
+				} else {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Information Dialog");
+					alert.setHeaderText("Alert");
+					alert.setContentText("Input is Empty!");
+					alert.showAndWait();
+				}
+	
+		});
 
 	}
+	
+	
 
 }
